@@ -103,10 +103,10 @@ int main()
 
 	//Operation dot & Vector - dot
 	DirectX::XMVECTORF32 resultTranslationVector{1.0, 1.0, 1.0};
-	DirectX::XMVECTORF32 resultTranslationVector2{ 1.0, 1.0, 1.0, 0.0};
+	DirectX::XMVECTOR resultTranslationVector2 = DirectX::XMVectorSet(1.0, 1.0, 1.0, 0.0);
 	PrintVector(DirectX::XMVector3TransformCoord(resultTranslationVector, translationMatFromVec));
 
-	PrintVector(DirectX::XMVector3TransformNormal(resultTranslationVector, translationMatFromVec));
+	PrintVector(DirectX::XMVector3Transform(resultTranslationVector2, translationMatFromVec));
 
 	return 0;
 }
